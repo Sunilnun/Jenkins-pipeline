@@ -1,0 +1,23 @@
+pipeline{
+    agent none
+    stages{
+        stage('hi from the java agent') {
+            agent{
+                label 'java-agent'
+            }
+            steps{
+                echo 'this is from the java agent'
+
+            }
+        }
+        stage('hi from node agent') {
+            agent{
+                label 'node-slave'
+            }
+            steps{
+                echo 'this is from the node slave'
+            }
+        }
+        
+    }
+}
