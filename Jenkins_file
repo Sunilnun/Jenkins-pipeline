@@ -17,9 +17,18 @@ pipeline{
                 script {
                     //define a variable
                    sh 'hostname -i'
-                    
+                    def course = "k8s"
+                    if (course == "k8s")
+                    {
+                        plrintln("thanks for enrolling the $course")
+                    }
+                    else                    
+                        println( "please enrole $course")
                 }
             }
         }
     }
 }
+
+
+ 
