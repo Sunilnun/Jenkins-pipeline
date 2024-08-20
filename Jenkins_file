@@ -1,23 +1,31 @@
 pipeline{
-    agent none
+    agent{
+        label 'java-agent'
+    }
     stages{
-        stage('hi from the java agent') {
-            agent{
-                label 'java-agent'
-            }
+        stage('this stage is to build the statement'){
             steps{
-                echo 'this is from the java agent'
+                echo 'you are in build stage'
+            }
+            
+        }
 
-            }
-        }
-        stage('hi from node agent') {
-            agent{
-                label 'node-slave'
-            }
+        stage('this stage is for the example of script'){
             steps{
-                echo 'this is from the node slave'
+                echo 'executing the script stage'
+                //write some custom code
+                script{
+                    //define avariable
+                    def course = k8s
+                    if(course == k8s){
+                        plrintln( "thanks for enrolling the $course")
+                    }
+                    else
+                    {
+                        println( "please enrole $course")
+                    }
+                }
             }
         }
-        
     }
 }
