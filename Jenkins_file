@@ -14,8 +14,12 @@ pipeline{
             steps{
                 echo 'executing the script stage'
                 //write some custom code
-                                    
+                script {
+                    //define a variable
+                   sh 'hostname -i'
+                    
                 }
             }
         }
-} 
+    }
+}
