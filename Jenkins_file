@@ -1,28 +1,15 @@
 pipeline{
     agent any
     stages{
-        stage('this is the first stage'){
+        stage('this is the block to retry'){
             steps{
-                echo 'this step is to print the host name'
-                script{
-                    sh 'hostname -i'
-                    sleep 10 //seconds
+                echo "entering the retrt block"
+                retryt(3){
+                    echo "welcome to retry block"
+                    error "testing the retry block"
                 }
+                echo "successfully completed the retry block for 3 times"
             }
-            
         }
-        stage('this is the second stage'){
-                steps('this stage is for defining a script given'){
-                    script{
-                        def name = "sunil"
-                        if(name == "Sunil"){
-                            println("$name he will live long life happly")
-                        }
-                        else{
-                            println("$name he will live in good place and good vibe")
-                        }
-                    }
-                }
-            }
     }
 }
