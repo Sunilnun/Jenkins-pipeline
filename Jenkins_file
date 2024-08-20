@@ -11,7 +11,7 @@ pipeline{
             }
             
         }
-        stage{
+        stage('this is the second stage'){
                 steps('this stage is for defining a script given'){
                     script{
                         def name = "sunil"
