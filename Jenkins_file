@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage{
+        stage('sleeping stage'){
             steps{
                 timeout(time:10 , unit:SECONDS){
                     echo"sleeping for 60 seconds"
