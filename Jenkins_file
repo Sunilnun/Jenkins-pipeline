@@ -1,15 +1,15 @@
 pipeline{
-    agent any
+    angent any
+    tools{
+        maven 'maven-slave'
+    }
     stages{
-        stage('sleeping stage'){ 
+        stage('maven stage 1'){
             steps{
-                    timeout(time: 10 , unit: 'HOURS'){
-                    echo"sleeping for 60 seconds"
-                    sleep 60
-                    //sunil approval
-                }
-                echo 'sleeping block completed'
-            }        
+                echo 'maven version'
+                sh 'man --version'
+            }
         }
+
     }
 }
