@@ -1,15 +1,14 @@
 pipeline{
     agent any
     stages{
-        stage('we are using this stage to test  the timeout'){
-            echo 'entering into the timeoutstage'
+        stage{
             steps{
                 timeout(time:10 , unit:SECONDS){
                     echo"sleeping for 60 seconds"
                     sleep 60
-                }
             }
         }
+       
         
     }
 }
