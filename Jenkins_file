@@ -1,14 +1,13 @@
 pipeline{
     agent any
     stages{
-        stage('this is the block to retry'){
+        stage('we are using this stage to test  the timeout'){
+            echo 'entering into the timeoutstage'
             steps{
-                echo "entering the retrt block"
-                retry(3){
-                    echo "welcome to retry block"
-                    error "testing the retry block"
+                timeout(time:10 , unit:SECONDS){
+                    echo"sleeping for 60 seconds"
+                    sleep 60
                 }
-                echo "successfully completed the retry block for 3 times"
             }
         }
     }
