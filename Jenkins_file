@@ -14,16 +14,15 @@ pipeline{
             steps{
                 echo 'executing the script stage'
                 //write some custom code
-                script{
+                script {
                     //define avariable
                     def course = "k8s"
-                    if(course == "k8s"){
-                        plrintln( "thanks for enrolling the $course")
+                    if (course == "k8s"){
+                        plrintln("thanks for enrolling the $course")
                     }
-                    else
-                    {
+                    else                    
                         println( "please enrole $course")
-                    }
+                    
                 }
             }
         }
