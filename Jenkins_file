@@ -1,12 +1,12 @@
 pipeline{
     agent any
     stages{
-        stage('sleeping stage')
-        {             steps{
-                echo 'entered into timeout block'
-                timeout(time:10 , unit:HOURS){
+        stage('sleeping stage'){ 
+            steps{
+                    timeout(time: 10 , unit: 'HOURS'){
                     echo"sleeping for 60 seconds"
                     sleep 60
+                    //sunil approval
                 }
                 echo 'sleeping block completed'
             }        
