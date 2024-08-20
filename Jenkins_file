@@ -4,7 +4,7 @@ pipeline{
         stage('this is the block to retry'){
             steps{
                 echo "entering the retrt block"
-                retryt(3){
+                retry(3){
                     echo "welcome to retry block"
                     error "testing the retry block"
                 }
